@@ -16,8 +16,8 @@ const cookieParser = require("cookie-parser");
 const MarketingCloudClient = require("@adobe/target-node-client");
 const TEMPLATE = fs.readFileSync(__dirname + "/templates/index.tpl").toString();
 const CONFIG = {
-  client: "adobetargetmobile",
-  organizationId: "B8A054D958807F770A495DD6@AdobeOrg",
+  client: "tabcorpholdingslimit",
+  organizationId: "5C750C3A53DB4D070A490D4D@AdobeOrg",
   timeout: 10000
 };
 
@@ -64,7 +64,7 @@ function sendResponse(res, offer) {
 app.get("/", function (req, res) {
   const targetCookieName = encodeURIComponent(MarketingCloudClient.getTargetCookieName());
   const targetCookie = req.cookies[targetCookieName];
-  const payload = {"mbox" : "a1-serverside-ab"};
+  const payload = {"mbox" : "home-page-service"};
   const request = Object.assign({payload}, {targetCookie});
 
   console.log("Request", request);
